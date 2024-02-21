@@ -1,0 +1,17 @@
+Enable GPIO Rasp Pi 4 for Protoneer CNC hat
+
+raspi-config
+	Interface Options
+		Serial Port
+			Login shell over serial:  No
+			Serial port enabled:  Yes
+
+/boot/firmware/cmdline.txt file
+	Remove 'console=serial0,115200'
+
+/boot/firmware/config.txt
+	Add 'dtoverlay=disable-bt'
+
+systemctl disable hciuart
+
+Reboot
